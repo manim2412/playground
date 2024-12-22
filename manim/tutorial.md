@@ -1,8 +1,6 @@
-# [manim tutorial link](https://docs.manim.community/en/stable/tutorials/quickstart.html)
+## [manim tutorial link](https://docs.manim.community/en/stable/tutorials/quickstart.html)
 
-1. Animating a circle
-
-
+# 1. Animating a circle
 **[input]**
 ```python
 from manim import *
@@ -22,9 +20,7 @@ manim -pql scene.py CreateCircle
 ***
 
 
-2. Transforming a square into a circle
-
-
+# 2. Transforming a square into a circle
 **[input]**
 ```python
 from manim import *
@@ -50,9 +46,7 @@ manim -pql scene.py SquareToCircle
 ***
 
   
-3. Positioning <code>Mobject</code>s
-
-
+# 3. Positioning <code>Mobject</code>s
 **[input]**
 ```python
 from manim import *
@@ -77,10 +71,8 @@ manim -pql scene.py SquareAndCircle
 ***
 
    
-4. Using <code>.animate</code> syntax to animate methods
-
-
-**[input1]**
+# 4. (1) Using <code>.animate</code> syntax to animate methods
+**[input]**
 ```python
 from manim import *
 
@@ -96,15 +88,16 @@ class AnimatedSquareToCircle(Scene):
             square.animate.set_fill(PINK, opacity=0.5)
         )  
 ```  
-**[command line1]**
+**[command line]**
 ```python
 manim -pql scene.py AnimatedSquareToCircle
 ```
-**[output1]**  
-[AnimatedSquareToCircle youtube](https://youtu.be/6ho6almFkoA)
+**[output]**  
+[AnimatedSquareToCircle youtube](https://youtu.be/6ho6almFkoA)  
 
 
-**[input2]**
+# 4. (2) Using <code>.animate</code> syntax to animate methods
+**[input]**
 ```python
 from manim import *
 
@@ -118,16 +111,16 @@ class DifferentRotations(Scene):
 
         self.wait()
 ```  
-**[command line2]**
+**[command line]**
 ```python
 manim -pql scene.py DifferentRotations
 ```
-**[output2]**  
+**[output]**  
 [DifferentRotations youtube](https://youtu.be/KkxieJMFGLI)
 ***
 
      
-5. <code>Transform</code> vs <code>ReplacementTransform</code>
+# 5. <code>Transform</code> vs <code>ReplacementTransform</code>
 
 
 **[input]**
