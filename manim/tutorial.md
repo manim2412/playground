@@ -120,25 +120,62 @@ manim -pql scene.py DifferentRotations
 ***
 
      
-# 5. <code>Transform</code> vs <code>ReplacementTransform</code>
-
-
+# 5. (1) <code>Transform</code> vs <code>ReplacementTransform</code>
 **[input]**
 ```python
 from manim import *
 
-class CreateCircle(Scene):
+class TwoTransforms(Scene):
+    def transform(self):
+        a = Circle()
+        b = Square()
+        c = Triangle()
+        self.play(Transform(a, b))
+        self.play(Transform(a, c))
+        self.play(FadeOut(a))
+
+    def replacement_transform(self):
+        a = Circle()
+        b = Square()
+        c = Triangle()
+        self.play(ReplacementTransform(a, b))
+        self.play(ReplacementTransform(b, c))
+        self.play(FadeOut(c))
+
     def construct(self):
-        circle = Circle()
-        circle.set_fill(PINK, opacity=0.5)
-        self.play(Create(circle))
+        self.transform()
+        self.wait(0.5)
+        self.replacement_transform()
 ```  
 **[command line]**
 ```python
-manim -pql scene.py CreateCircle
+manim -pql scene.py TwoTransforms
 ```
 **[output]**  
-[CreateCircle youtube](https://youtu.be/a6TyJKwqiTc)
+[TwoTransforms youtube](https://youtu.be/rDXPozUKzRs)
+
+
+# 5. (2) <code>Transform</code> vs <code>ReplacementTransform</code>
+**[input]**
+```python
+from manim import *
+
+class TransformCycle(Scene):
+    def construct(self):
+        a = Circle()
+        t1 = Square()
+        t2 = Triangle()
+        self.add(a)
+        self.wait()
+        for t in [t1,t2]:
+            self.play(Transform(a,t))
+```  
+**[command line]**
+```python
+manim -pql scene.py TransformCycle
+```
+**[output]**  
+[TransformCycle youtube](https://youtu.be/eYuxKHhh82I)
 
 
 
