@@ -18,7 +18,7 @@ class CreateCircle(Scene):
 manim -pql scene.py CreateCircle
 ```
 **[output]**  
-[CreateCircle youtube](https://youtu.be/a6TyJKwqiTc)
+[CreateCircle youtube](https://youtu.be/a6TyJKwqiTc){:target="_blank"}
 ***
 
 
