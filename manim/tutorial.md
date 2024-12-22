@@ -18,10 +18,8 @@ class CreateCircle(Scene):
 manim -pql scene.py CreateCircle
 ```
 **[output]**  
-[CreateCircle youtube](https://youtu.be/a6TyJKwqiTc){:target="_blank"}
+[CreateCircle youtube](https://youtu.be/a6TyJKwqiTc)
 ***
-<a href="https://www.youtube.com" target="_blank">YouTube</a>
-Click [here](https://www.geeksforgeeks.org/){:target="_blank"} 
 
 
 2. Transforming a square into a circle
@@ -51,7 +49,6 @@ manim -pql scene.py SquareToCircle
 [SquareToCircle youtube](https://youtu.be/iypJjYoq1YQ)
 ***
 
-
   
 3. Positioning <code>Mobject</code>s
 
@@ -80,29 +77,57 @@ manim -pql scene.py SquareAndCircle
 ***
 
    
-6. Using <code>.animate</code> syntax to animate methods
+4. Using <code>.animate</code> syntax to animate methods
 
 
-**[input]**
+**[input1]**
 ```python
 from manim import *
 
-class CreateCircle(Scene):
+class AnimatedSquareToCircle(Scene):
     def construct(self):
-        circle = Circle()
-        circle.set_fill(PINK, opacity=0.5)
-        self.play(Create(circle))
+        circle = Circle()  
+        square = Square()  
+
+        self.play(Create(square))  
+        self.play(square.animate.rotate(PI / 4))  
+        self.play(Transform(square, circle))  
+        self.play(
+            square.animate.set_fill(PINK, opacity=0.5)
+        )  
 ```  
-**[command line]**
+**[command line1]**
 ```python
-manim -pql scene.py CreateCircle
+manim -pql scene.py AnimatedSquareToCircle
 ```
-**[output]**  
-[CreateCircle youtube](https://youtu.be/a6TyJKwqiTc)
+**[output1]**  
+[AnimatedSquareToCircle youtube](https://youtu.be/6ho6almFkoA)
+
+
+**[input2]**
+```python
+from manim import *
+
+class DifferentRotations(Scene):
+    def construct(self):
+        left_square = Square(color=BLUE, fill_opacity=0.7).shift(2 * LEFT)
+        right_square = Square(color=GREEN, fill_opacity=0.7).shift(2 * RIGHT)
+        self.play(
+            left_square.animate.rotate(PI), Rotate(right_square, angle=PI), run_time=2
+        )
+
+        self.wait()
+```  
+**[command line2]**
+```python
+manim -pql scene.py DifferentRotations
+```
+**[output2]**  
+[DifferentRotations youtube](https://youtu.be/KkxieJMFGLI)
 ***
 
      
-7. <code>Transform</code> vs <code>ReplacementTransform</code>
+5. <code>Transform</code> vs <code>ReplacementTransform</code>
 
 
 **[input]**
