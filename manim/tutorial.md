@@ -56,7 +56,7 @@ class SquareAndCircle(Scene):
         circle = Circle()  
         circle.set_fill(PINK, opacity=0.5)  
 
-        square = Square()  # create a square
+        square = Square()
         square.set_fill(BLUE, opacity=0.5)  
 
         square.next_to(circle, RIGHT, buff=0.5) 
