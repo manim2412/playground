@@ -29,7 +29,8 @@ public class RegistrationException extends RuntimeException {
             throw new RegistrationException("Account Already Exist");
 ```
 
-## [PostMan] Response Body
+## [PostMan] Response Body 
+[400 Bad Request]
 ```json
 {
     "message": "Already exist EMAIL"
