@@ -21,3 +21,8 @@ public class CorsConfig implements WebMvcConfigurer {
     }
 }
 ```
+
+[application.properties]
+```java
+logging.level.org.springframework.web.cors=DEBUG
+```
