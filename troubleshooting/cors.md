@@ -5,4 +5,4 @@ Http request에 **Origin** 전달
 http response에 **Acess-Control-Allow-Origin** 전달
 ## 3. client
 client request Origin과
-server response Access-Control-Allow-Origin 비
+server response Access-Control-Allow-Origin 비교
